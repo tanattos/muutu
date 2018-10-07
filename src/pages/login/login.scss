@@ -1,0 +1,21 @@
+page-login {
+    ion-content {
+        background-image: url('../assets/imgs/fondo.png');
+        background-size: cover;
+        background-position: center;
+        width: 100%;
+        position: relative;
+    }
+    img {
+        width: 200px;
+    }
+    .top-20 {
+        margin-top: 20%;
+    }
+    .top-5 {
+        margin-top: 5%;
+    }
+    ion-list {
+        display: flex;
+    }
+}
