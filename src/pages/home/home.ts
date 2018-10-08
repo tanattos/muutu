@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, ToastController } from 'ionic-angular';
 import { FundacionesPage } from '../fundaciones/fundaciones';
 import { WelcomePage } from '../welcome/welcome';
-
+import { AngularFireAuth } from 'angularfire2/auth';
 
 @Component({
   selector: 'page-home',
@@ -10,7 +10,7 @@ import { WelcomePage } from '../welcome/welcome';
 })
 export class HomePage {
 
-  constructor(public navCtrl: NavController) {
+  constructor(public navCtrl: NavController, private afAuth: AngularFireAuth, private toast: ToastController) {
 
   }
 
@@ -21,5 +21,27 @@ export class HomePage {
   salir(){
     this.navCtrl.push(WelcomePage);
   }
+
+  ionViewDidLoad() {
+    this.afAuth.authState.subscribe(data => {
+      if(data && data.email && data.uid){
+      this.toast.create({
+        // message: 'Bienvenido a Muutu, ${data.email}',
+        message: 'Bienvenido a Muutu',
+        duration: 3000
+      }).present();
+    }
+    else{
+
+      this.toast.create({
+        message: 'No se encuentra registrado',
+        duration: 3000
+      }).present();
+
+    }
+    })
+  }
+
+
 
 }

@@ -11,7 +11,10 @@ import { LoginPage } from '../pages/login/login';
 import { WelcomePage } from '../pages/welcome/welcome';
 import {LogoutPage} from '../pages/logout/logout';
 import {FundacionesPage} from '../pages/fundaciones/fundaciones';
-
+import { AngularFireModule } from 'angularfire2';
+import { FIREBASE_CONFIG } from './app.firebase.config';
+import { RegisterPage } from '../pages/register/register';
+import { AngularFireAuthModule } from 'angularfire2/auth';
 
 @NgModule({
   declarations: [
@@ -20,11 +23,14 @@ import {FundacionesPage} from '../pages/fundaciones/fundaciones';
     LoginPage,
     WelcomePage,
     LogoutPage,
-    FundacionesPage
+    FundacionesPage,
+    RegisterPage
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    AngularFireModule.initializeApp(FIREBASE_CONFIG),
+    AngularFireAuthModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -33,7 +39,8 @@ import {FundacionesPage} from '../pages/fundaciones/fundaciones';
     LoginPage,
     WelcomePage,
     LogoutPage,
-    FundacionesPage
+    FundacionesPage,
+    RegisterPage
   ],
   providers: [
     StatusBar,
