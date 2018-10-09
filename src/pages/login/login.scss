@@ -1,9 +1,33 @@
 page-login {
-    #login {
-        background: #d6a52a;
-        background: -moz-linear-gradient(top, #d6a52a 0%, #e8dd4a 100%);
-        background: -webkit-linear-gradient(top, #d6a52a 0%,#e8dd4a 100%);
-        background: linear-gradient(to bottom, #d6a52a 0%,#e8dd4a 100%);
-        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d6a52a', endColorstr='#e8dd4a',GradientType=0 )
+    #login  {
+        text-align: center !important;
+        background: #de4e08;
+        background: -moz-linear-gradient(top, #de4e08 0%, #ff8106 100%);
+        background: -webkit-linear-gradient(top, #de4e08 0%,#ff8106 100%);
+        background: linear-gradient(to bottom, #de4e08 0%,#ff8106 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#de4e08', endColorstr='#ff8106',GradientType=0 );
         }
+
+    ion-list{
+        margin-top: 150px !important;
+
+    }
+
+    .logo-login{
+        width: 50%;
+    }
+
+    ion-label{
+        color: #fff !important;
+    }
+
+    ion-item{
+        background-color: #ffffff00 !important;
+        padding: 10px !important;
+        border-radius: 60px;
+    }
+
+    button{
+        margin-top: 10px !important;
+    }
 }
